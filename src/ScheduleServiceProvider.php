@@ -35,7 +35,7 @@ class ScheduleServiceProvider extends ServiceProvider
                 $repository = $m->getRepository();
 
                 foreach ($repository->findAllEnabled() as $s) {
-                    $schedule->command('lara-ore:work:fire', ['id' => $s->work->id])->cron($s->cron);
+                    $schedule->command('lara-ore:work:fire', [$s->work->id])->cron($s->cron);
                 }
             }
         });
