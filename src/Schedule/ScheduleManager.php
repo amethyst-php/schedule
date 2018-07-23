@@ -21,7 +21,17 @@ class ScheduleManager extends ModelManager
      *
      * @var array
      */
-    protected $attributes = [Attributes\Id\IdAttribute::class, Attributes\Name\NameAttribute::class, Attributes\CreatedAt\CreatedAtAttribute::class, Attributes\UpdatedAt\UpdatedAtAttribute::class, Attributes\DeletedAt\DeletedAtAttribute::class, Attributes\Description\DescriptionAttribute::class, Attributes\Enabled\EnabledAttribute::class, Attributes\Cron\CronAttribute::class, Attributes\WorkId\WorkIdAttribute::class];
+    protected $attributes = [
+        Attributes\Id\IdAttribute::class,
+        Attributes\Name\NameAttribute::class,
+        Attributes\CreatedAt\CreatedAtAttribute::class,
+        Attributes\UpdatedAt\UpdatedAtAttribute::class,
+        Attributes\DeletedAt\DeletedAtAttribute::class,
+        Attributes\Description\DescriptionAttribute::class,
+        Attributes\Enabled\EnabledAttribute::class,
+        Attributes\Cron\CronAttribute::class,
+        Attributes\WorkId\WorkIdAttribute::class,
+    ];
 
     /**
      * List of all exceptions.

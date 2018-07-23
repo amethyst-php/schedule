@@ -4,13 +4,6 @@ namespace Railken\LaraOre\Tests\Schedule;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Railken\LaraOre\ScheduleServiceProvider::class,
-        ];
-    }
-
     /**
      * Setup the test environment.
      */
@@ -24,5 +17,12 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $this->artisan('migrate:fresh');
         //$this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\ScheduleServiceProvider', '--force' => true]);
         $this->artisan('migrate');
+    }
+
+    protected function getPackageProviders($app)
+    {
+        return [
+            \Railken\LaraOre\ScheduleServiceProvider::class,
+        ];
     }
 }
