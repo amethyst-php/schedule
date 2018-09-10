@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
+use Railken\LaraOre\Console\Commands\ScheduleFireCommand;
 use Railken\LaraOre\Schedule\ScheduleManager;
 
 class ScheduleServiceProvider extends ServiceProvider
@@ -21,9 +22,10 @@ class ScheduleServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
+        $this->commands([ScheduleFireCommand::class]);
 
-        config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
-            //\Railken\LaraOre\Schedule\ScheduleManager::class,
+        config(['ore.managers' => array_merge(Config::get('ore.managers', []), [
+            \Railken\LaraOre\Schedule\ScheduleManager::class,
         ])]);
 
         $this->app->booted(function () {
@@ -36,7 +38,7 @@ class ScheduleServiceProvider extends ServiceProvider
                 $repository = $m->getRepository();
 
                 foreach ($repository->findAllEnabled() as $s) {
-                    $schedule->command('lara-ore:work:fire', [$s->work->id])->cron($s->cron);
+                    $schedule->command('ore:schedule:fire', [$s->work->id])->cron($s->cron);
                 }
             }
         });

@@ -107,7 +107,7 @@ return [
             'enabled'    => true,
             'controller' => Railken\LaraOre\Http\Controllers\Admin\SchedulesController::class,
             'router'     => [
-                'prefix'      => '/admin/schedules',
+                'prefix'      => '/schedules',
             ],
         ],
     ],
