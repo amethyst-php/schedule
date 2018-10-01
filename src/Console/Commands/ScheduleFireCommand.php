@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\LaraOre\Console\Commands;
+namespace Railken\Amethyst\Console\Commands;
 
 use Illuminate\Console\Command;
-use Railken\LaraOre\Schedule\ScheduleManager;
-use Railken\LaraOre\Work\WorkManager;
+use Railken\Amethyst\Managers\ScheduleManager;
+use Railken\Amethyst\Managers\WorkManager;
 
 class ScheduleFireCommand extends Command
 {
@@ -13,14 +13,14 @@ class ScheduleFireCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'ore:schedule:fire {id}';
+    protected $signature = 'amethyst:schedule:fire {id}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fire ore-schedule';
+    protected $description = 'Fire amethyst-schedule';
 
     /**
      * Execute the console command.
@@ -31,7 +31,7 @@ class ScheduleFireCommand extends Command
     {
         $sm = new ScheduleManager();
         $wm = new WorkManager();
-        
+
         $resource = $sm->getRepository()->findOneById((int) $this->argument('id'));
 
         if ($resource === null) {

@@ -1,40 +1,32 @@
 {
-    "name": "railken/lara-ore-schedule",
-    "keywords": ["laravel", "lara-ore", "lara-ore-schedule", "schedule"],
+    "name": "railken/amethyst-schedule",
+    "keywords": ["laravel", "amethyst", "amethyst-schedule", "schedule"],
     "license": "MIT",
     "require": {
         "php": ">=7.1",
-        "railken/bag": "^1.2",
-        "railken/laravel-manager": "^3.0.3",
-        "fzaninotto/faker": "^1.7",
-        "railken/lara-ore-api": "dev-master",
-        "railken/lara-ore-support": "dev-master",
-        "railken/lara-ore-file": "dev-master",
-        "railken/lara-ore-template": "dev-master",
-        "railken/lara-ore-work": "dev-master",
-        "railken/lara-ore-file-generator": "dev-master",
-        "railken/lara-ore-email-sender": "dev-master",
-        "railken/lara-ore-repository": "dev-master",
-        "railken/lara-ore-data-builder": "dev-master"
+        "railken/amethyst-common": "0.1.*",
+        "railken/amethyst-work": "0.1.*"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10",
         "phpunit/phpunit": "~7.0",
-        "orchestra/testbench": "~3.6",
+        "orchestra/testbench": "3.6.*",
         "friendsofphp/php-cs-fixer": "^2.8.1"
     },
     "autoload": {
         "psr-4" : {
-            "Railken\\LaraOre\\" : "src/"
+            "Railken\\Amethyst\\" : "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": { "Railken\\LaraOre\\Tests\\": "tests/" }
+        "psr-4": { 
+            "Railken\\Amethyst\\Tests\\": "tests/" 
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Railken\\LaraOre\\ScheduleServiceProvider"
+                "Railken\\Amethyst\\Providers\\ScheduleServiceProvider"
             ]
         }
     }
