@@ -4,24 +4,22 @@ namespace Railken\Amethyst\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Schemas\ScheduleSchema;
+use Railken\Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
 class Schedule extends Model implements EntityContract
 {
-    use SoftDeletes;
+    use SoftDeletes, ConfigurableModel;
 
     /**
-     * Creates a new instance of the model.
+     * Create a new Eloquent model instance.
      *
      * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
+        $this->ini('amethyst.schedule.data.schedule');
         parent::__construct($attributes);
-        $this->table = Config::get('amethyst.schedule.managers.schedule.table');
-        $this->fillable = (new ScheduleSchema())->getNameFillableAttributes();
     }
 
     /**

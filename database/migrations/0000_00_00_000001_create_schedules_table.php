@@ -12,14 +12,14 @@ class CreateSchedulesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('amethyst.schedule.managers.schedule.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.schedule.data.schedule.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->string('cron')->nullable();
             $table->integer('work_id')->unsigned()->nullable();
-            $table->foreign('work_id')->references('id')->on(Config::get('amethyst.work.managers.work.table'));
+            $table->foreign('work_id')->references('id')->on(Config::get('amethyst.work.data.work.table'));
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ class CreateSchedulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('amethyst.schedule.managers.schedule.table'));
+        Schema::dropIfExists(Config::get('amethyst.schedule.data.schedule.table'));
     }
 }
