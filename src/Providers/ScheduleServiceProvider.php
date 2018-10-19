@@ -21,7 +21,7 @@ class ScheduleServiceProvider extends CommonServiceProvider
         $this->commands([ScheduleFireCommand::class]);
 
         $this->app->booted(function () {
-            if (Schema::hasTable(Config::get('amethyst.schedule.managers.schedule.table'))) {
+            if (Schema::hasTable(Config::get('amethyst.schedule.data.schedule.table'))) {
                 $schedule = $this->app->make(Schedule::class);
 
                 $m = new ScheduleManager();
