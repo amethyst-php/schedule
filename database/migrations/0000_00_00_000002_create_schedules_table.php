@@ -18,6 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->string('cron')->nullable();
+            $table->text('data')->nullable();
             $table->integer('work_id')->unsigned()->nullable();
             $table->foreign('work_id')->references('id')->on(Config::get('amethyst.work.data.work.table'));
             $table->timestamps();

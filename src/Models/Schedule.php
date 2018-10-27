@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Railken\Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
+/**
+ * @property \Railken\Amethyst\Models\Work $work
+ * @property object                        $data
+ */
 class Schedule extends Model implements EntityContract
 {
     use SoftDeletes, ConfigurableModel;

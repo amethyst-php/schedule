@@ -35,9 +35,11 @@ class ScheduleFireCommand extends Command
         $resource = $sm->getRepository()->findOneById((int) $this->argument('id'));
 
         if ($resource === null) {
-            return $this->error('No schedule found given id');
+            $this->error('No schedule found given id');
+
+            return;
         }
 
-        $wm->dispatch($resource->work, []);
+        $wm->dispatch($resource->work, $resource->data);
     }
 }

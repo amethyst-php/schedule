@@ -20,6 +20,7 @@ class ScheduleFaker extends Faker
         $bag->set('description', $faker->text);
         $bag->set('enabled', 1);
         $bag->set('cron', '* * * * *');
+        $bag->set('data', ['x' => 1]);
         $bag->set('work', WorkFaker::make()->parameters()->toArray());
 
         return $bag;
