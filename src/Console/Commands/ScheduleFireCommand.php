@@ -5,6 +5,7 @@ namespace Railken\Amethyst\Console\Commands;
 use Illuminate\Console\Command;
 use Railken\Amethyst\Managers\ScheduleManager;
 use Railken\Amethyst\Managers\WorkManager;
+use Railken\Template\Generators;
 
 class ScheduleFireCommand extends Command
 {
@@ -40,6 +41,8 @@ class ScheduleFireCommand extends Command
             return;
         }
 
-        $wm->dispatch($resource->work, $resource->data);
+        $generator = new Generators\TextGenerator();
+
+        $wm->dispatch($resource->work, (array) json_decode($generator->generateAndRender(json_encode($resource->data), [])));
     }
 }

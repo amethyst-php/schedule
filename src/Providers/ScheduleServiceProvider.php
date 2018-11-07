@@ -30,7 +30,7 @@ class ScheduleServiceProvider extends CommonServiceProvider
                 $repository = $m->getRepository();
 
                 foreach ($repository->findAllEnabled() as $s) {
-                    $schedule->command('amethyst:schedule:fire', [$s->work->id])->cron($s->cron);
+                    $schedule->command('amethyst:schedule:fire', [$s->id])->cron($s->cron);
                 }
             }
         });
