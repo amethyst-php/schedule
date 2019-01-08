@@ -5,6 +5,7 @@ namespace Railken\Amethyst\Fakers;
 use Faker\Factory;
 use Railken\Bag;
 use Railken\Lem\Faker;
+use Symfony\Component\Yaml\Yaml;
 
 class ScheduleFaker extends Faker
 {
@@ -20,7 +21,7 @@ class ScheduleFaker extends Faker
         $bag->set('description', $faker->text);
         $bag->set('enabled', 1);
         $bag->set('cron', '* * * * *');
-        $bag->set('data', ['x' => 1]);
+        $bag->set('data', Yaml::dump(['x' => 1]));
         $bag->set('work', WorkFaker::make()->parameters()->toArray());
 
         return $bag;

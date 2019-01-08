@@ -29,5 +29,5 @@ class ScheduleTest extends BaseTest
      *
      * @var string
      */
-    protected $config = 'amethyst.schedule.http.admin.schedule';
+    protected $route = 'admin.schedule';
 }

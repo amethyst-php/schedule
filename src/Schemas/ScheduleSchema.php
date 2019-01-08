@@ -27,7 +27,7 @@ class ScheduleSchema extends Schema
                 ->setRelationManager(WorkManager::class),
             Attributes\TextAttribute::make('cron')
                 ->setRequired(true),
-            Attributes\ObjectAttribute::make('data'),
+            Attributes\YamlAttribute::make('data'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),

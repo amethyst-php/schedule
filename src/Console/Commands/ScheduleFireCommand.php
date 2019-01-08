@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Railken\Amethyst\Managers\ScheduleManager;
 use Railken\Amethyst\Managers\WorkManager;
 use Railken\Template\Generators;
+use Symfony\Component\Yaml\Yaml;
 
 class ScheduleFireCommand extends Command
 {
@@ -43,6 +44,6 @@ class ScheduleFireCommand extends Command
 
         $generator = new Generators\TextGenerator();
 
-        $wm->dispatch($resource->work, (array) json_decode($generator->generateAndRender(json_encode($resource->data), [])));
+        $wm->dispatch($resource->work, Yaml::parse($generator->generateAndRender($resource->data, [])));
     }
 }
