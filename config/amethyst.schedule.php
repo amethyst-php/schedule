@@ -35,11 +35,11 @@ return [
     'http' => [
         'admin' => [
             'schedule' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\SchedulesController::class,
-                'router'      => [
-                    'as'        => 'schedule.',
-                    'prefix'    => '/schedules',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\SchedulesController::class,
+                'router'     => [
+                    'as'     => 'schedule.',
+                    'prefix' => '/schedules',
                 ],
             ],
         ],
