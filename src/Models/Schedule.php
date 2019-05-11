@@ -34,6 +34,6 @@ class Schedule extends Model implements EntityContract
      */
     public function work(): BelongsTo
     {
-        return $this->belongsTo(Work::class);
+        return $this->belongsTo(config('amethyst.work.data.work.model'));
     }
 }
