@@ -13,14 +13,14 @@ return [
         'schedule' => [
             'table'      => 'amethyst_schedules',
             'comment'    => 'Schedule',
-            'model'      => Railken\Amethyst\Models\Schedule::class,
-            'schema'     => Railken\Amethyst\Schemas\ScheduleSchema::class,
-            'repository' => Railken\Amethyst\Repositories\ScheduleRepository::class,
-            'serializer' => Railken\Amethyst\Serializers\ScheduleSerializer::class,
-            'validator'  => Railken\Amethyst\Validators\ScheduleValidator::class,
-            'authorizer' => Railken\Amethyst\Authorizers\ScheduleAuthorizer::class,
-            'faker'      => Railken\Amethyst\Fakers\ScheduleFaker::class,
-            'manager'    => Railken\Amethyst\Managers\ScheduleManager::class,
+            'model'      => Amethyst\Models\Schedule::class,
+            'schema'     => Amethyst\Schemas\ScheduleSchema::class,
+            'repository' => Amethyst\Repositories\ScheduleRepository::class,
+            'serializer' => Amethyst\Serializers\ScheduleSerializer::class,
+            'validator'  => Amethyst\Validators\ScheduleValidator::class,
+            'authorizer' => Amethyst\Authorizers\ScheduleAuthorizer::class,
+            'faker'      => Amethyst\Fakers\ScheduleFaker::class,
+            'manager'    => Amethyst\Managers\ScheduleManager::class,
         ],
     ],
 
@@ -36,7 +36,7 @@ return [
         'admin' => [
             'schedule' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\Admin\SchedulesController::class,
+                'controller' => Amethyst\Http\Controllers\Admin\SchedulesController::class,
                 'router'     => [
                     'as'     => 'schedule.',
                     'prefix' => '/schedules',

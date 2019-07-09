@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Tests\Managers;
+namespace Amethyst\Tests\Managers;
 
-use Railken\Amethyst\Fakers\ScheduleFaker;
-use Railken\Amethyst\Managers\ScheduleManager;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Fakers\ScheduleFaker;
+use Amethyst\Managers\ScheduleManager;
+use Amethyst\Tests\BaseTest;
 use Railken\Lem\Support\Testing\TestableBaseTrait;
 
 class ScheduleTest extends BaseTest

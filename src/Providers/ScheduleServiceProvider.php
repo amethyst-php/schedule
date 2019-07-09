@@ -1,13 +1,13 @@
 <?php
 
-namespace Railken\Amethyst\Providers;
+namespace Amethyst\Providers;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
-use Railken\Amethyst\Common\CommonServiceProvider;
-use Railken\Amethyst\Console\Commands\ScheduleFireCommand;
-use Railken\Amethyst\Managers\ScheduleManager;
+use Amethyst\Common\CommonServiceProvider;
+use Amethyst\Console\Commands\ScheduleFireCommand;
+use Amethyst\Managers\ScheduleManager;
 
 class ScheduleServiceProvider extends CommonServiceProvider
 {
@@ -27,7 +27,7 @@ class ScheduleServiceProvider extends CommonServiceProvider
 
                     $m = new ScheduleManager();
 
-                    /** @var \Railken\Amethyst\Repositories\ScheduleRepository */
+                    /** @var \Amethyst\Repositories\ScheduleRepository */
                     $repository = $m->getRepository();
 
                     foreach ($repository->findAllEnabled() as $s) {
@@ -45,6 +45,6 @@ class ScheduleServiceProvider extends CommonServiceProvider
     {
         parent::register();
 
-        $this->app->register(\Railken\Amethyst\Providers\WorkServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\WorkServiceProvider::class);
     }
 }
