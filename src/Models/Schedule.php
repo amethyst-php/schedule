@@ -2,15 +2,15 @@
 
 namespace Amethyst\Models;
 
+use Amethyst\Common\ConfigurableModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
 /**
  * @property \Amethyst\Models\Work $work
- * @property object                        $data
+ * @property object                $data
  */
 class Schedule extends Model implements EntityContract
 {

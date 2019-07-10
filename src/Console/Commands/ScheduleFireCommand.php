@@ -2,9 +2,9 @@
 
 namespace Amethyst\Console\Commands;
 
-use Illuminate\Console\Command;
 use Amethyst\Managers\ScheduleManager;
 use Amethyst\Managers\WorkManager;
+use Illuminate\Console\Command;
 use Railken\Template\Generators;
 use Symfony\Component\Yaml\Yaml;
 
