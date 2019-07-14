@@ -6,12 +6,12 @@ use Amethyst\Common\ConfigurableManager;
 use Railken\Lem\Manager;
 
 /**
- * @method \Amethyst\Models\Schedule newEntity()
- * @method \Amethyst\Schemas\ScheduleSchema getSchema()
+ * @method \Amethyst\Models\Schedule                 newEntity()
+ * @method \Amethyst\Schemas\ScheduleSchema          getSchema()
  * @method \Amethyst\Repositories\ScheduleRepository getRepository()
- * @method \Amethyst\Serializers\ScheduleSerializer getSerializer()
- * @method \Amethyst\Validators\ScheduleValidator getValidator()
- * @method \Amethyst\Authorizers\ScheduleAuthorizer getAuthorizer()
+ * @method \Amethyst\Serializers\ScheduleSerializer  getSerializer()
+ * @method \Amethyst\Validators\ScheduleValidator    getValidator()
+ * @method \Amethyst\Authorizers\ScheduleAuthorizer  getAuthorizer()
  */
 class ScheduleManager extends Manager
 {
