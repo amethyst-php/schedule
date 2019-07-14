@@ -7,8 +7,8 @@ use Amethyst\Console\Commands\ScheduleFireCommand;
 use Amethyst\Managers\ScheduleManager;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ScheduleServiceProvider extends CommonServiceProvider
 {
@@ -23,7 +23,6 @@ class ScheduleServiceProvider extends CommonServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->app->booted(function () {
-                
                 try {
                     DB::connection()->getPdo();
                 } catch (\Exception $e) {
