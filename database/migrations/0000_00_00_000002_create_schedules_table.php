@@ -14,7 +14,7 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create(Config::get('amethyst.schedule.data.schedule.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name')->index();
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->string('cron')->nullable();
