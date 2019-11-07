@@ -21,28 +21,26 @@ class ScheduleServiceProvider extends CommonServiceProvider
 
         $this->commands([ScheduleFireCommand::class]);
 
-        if ($this->app->runningInConsole()) {
-            $this->app->booted(function () {
-                try {
-                    DB::connection()->getPdo();
-                } catch (\Exception $e) {
-                    return;
+        $this->app->booted(function () {
+            try {
+                DB::connection()->getPdo();
+            } catch (\Exception $e) {
+                return;
+            }
+
+            if (Schema::hasTable(Config::get('amethyst.schedule.data.schedule.table'))) {
+                $schedule = $this->app->make(Schedule::class);
+
+                $m = new ScheduleManager();
+
+                /** @var \Amethyst\Repositories\ScheduleRepository */
+                $repository = $m->getRepository();
+
+                foreach ($repository->findAllEnabled() as $s) {
+                    $schedule->command('amethyst:schedule:fire', [$s->id])->cron($s->cron);
                 }
-
-                if (Schema::hasTable(Config::get('amethyst.schedule.data.schedule.table'))) {
-                    $schedule = $this->app->make(Schedule::class);
-
-                    $m = new ScheduleManager();
-
-                    /** @var \Amethyst\Repositories\ScheduleRepository */
-                    $repository = $m->getRepository();
-
-                    foreach ($repository->findAllEnabled() as $s) {
-                        $schedule->command('amethyst:schedule:fire', [$s->id])->cron($s->cron);
-                    }
-                }
-            });
-        }
+            }
+        });
     }
 
     /**
