@@ -1,6 +1,6 @@
 # amethyst-schedule
 
-[![Build Status](https://travis-ci.org/amethyst-php/schedule.svg?branch=master)](https://travis-ci.org/amethyst-php/schedule)
+[![Action Status](https://github.com/amethyst-php/schedule/workflows/test/badge.svg)](https://github.com/amethyst-php/schedule/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
