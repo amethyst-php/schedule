@@ -2,8 +2,8 @@
 
 namespace Amethyst\Providers;
 
-use Amethyst\Core\Providers\CommonServiceProvider;
 use Amethyst\Console\Commands\ScheduleFireCommand;
+use Amethyst\Core\Providers\CommonServiceProvider;
 use Amethyst\Managers\ScheduleManager;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Config;
