@@ -23,25 +23,4 @@ return [
             'manager'    => Amethyst\Managers\ScheduleManager::class,
         ],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Http configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the routes
-    |
-    */
-    'http' => [
-        'admin' => [
-            'schedule' => [
-                'enabled'    => true,
-                'controller' => Amethyst\Http\Controllers\Admin\SchedulesController::class,
-                'router'     => [
-                    'as'     => 'schedule.',
-                    'prefix' => '/schedules',
-                ],
-            ],
-        ],
-    ],
 ];
